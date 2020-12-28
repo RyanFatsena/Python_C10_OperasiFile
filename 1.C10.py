@@ -1,25 +1,22 @@
 #1
+#membuka file
 file = open('textNo1.txt', 'r')
 
-textNo1 = file.readlines()
+#membaca file
+angka = file.readlines()
 
-genap = []
-ganjil = []
+# menghitung jumlah angka genap dan ganjil
+genap=[]
+ganjil=[]
 
-for x in range(len(textNo1)) :
-    if('\n' in textNo1[x] == True) :
-        textNo1[x].replace('\n', '')
-
-        if(int(textNo1[x])%2 == 0) :
-            genap.append(textNo1[x])
-        else :
-            ganjil.append(textNo1[x])
-
+for i in range(len(angka)):
+    num = angka[i]
+    
+    if (int(num)%2) == 0 :
+        genap = genap + [num]
+        
     else :
-        if(int(textNo1[x])%2 == 0) :
-            genap.append(textNo1[x])
-        else :
-            ganjil.append(textNo1[x])
-
-print('Banyaknya bilangan genap : {0}'.format(len(genap)))
-print('Banyaknya bilangan ganjil : {0}'.format(len(ganjil)))
+        ganjil = ganjil + [num]
+        
+print('Banyaknya bilangan genap : ', len(genap))
+print('Banyaknya bilangan ganjil: ', len(ganjil))
