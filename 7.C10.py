@@ -1,35 +1,37 @@
 #7
-def encrypt(teks, n) :
+def decrypt(teks, n):
     
     listTeks = list(teks)
 
-    for x in range(len(listTeks)) :
-        if(listTeks[x] != ' ') :
-            if(ord(listTeks[x]) + n < 90) :
+    for x in range(len(listTeks)):
+        
+        if(listTeks[x] != ' '):
+
+            if(ord(listTeks[x]) - n >= 65):
                 asciiCode = ord(listTeks[x])
-                encrypted = asciiCode + n
-                listTeks[x] = chr(encrypted)
+                didecrypt = asciiCode - n
+                listTeks[x] = chr(didecrypt)
 
             else :
                 asciiCode = ord(listTeks[x])
-                encrypted = (asciiCode + n) - 26
-                listTeks[x] = chr(encrypted)
+                didecrypt = (asciiCode + 26) - n
+                listTeks[x] = chr(didecrypt)
 
         else :  
             continue
 
-    result = ''.join(listTeks)
+    hasil = ''.join(listTeks)
 
-    return result
+    return hasil
 
 
 try :
     
     teks = input('Inputkan teks yang ingin dienkripsi :')
-    n = int(input('Berapa jumlah geseran enkripsi :'))
+    n = int(input('Berapa jumlah geseran pada enkripsi :'))
 
-    hasil = encrypt(teks, n)
-    print('\nHasil enkripsi dari teks {0} adalah : {1}'.format(teks, hasil))
+    hasil = decrypt(teks, n)
+    print('\nHasil enkripsi dari teks {0} yaitu : {1}'.format(teks, hasil))
 
 except ValueError :
     print('Inputkan khusus bilangan bulat')
