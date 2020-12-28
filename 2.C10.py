@@ -1,22 +1,22 @@
 #2
+#membuka file
 file = open('textNo2.txt','a')
 
 i = True
 while ( i == True) :
-    nim = input('Masukkan NIM : ')
+    nim = input('Masukkan NIM      : ')
     namaMhs = input('Masukkan Nama Mhs : ')
-    alamat = input('Masukkan Alamat : ')
-
+    alamat = input('Masukkan Alamat   : ')
+   
     file.write(nim + '|' + namaMhs + '|' + alamat + '\n')  
     ulangi = input('Ulangi input lagi (y/n) : \n')
     
     if (ulangi.lower() == 'y') :
         i = True
-    elif  (ulangi.lower() == 'n'):
+    elif (ulangi.lower() == 'n'):
         i = False
     else :
-        print ('Inputan anda tidak valid')
+        print ('Inputan yang dimasukkan invalid')
         continue
-
+#menutup file
 file.close()
-file.readline()
