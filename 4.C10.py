@@ -1,6 +1,6 @@
 #4
 mencariNim = input('Inputkan NIM yang dicari :')
-
+#membuka file
 file = open('textNo2.txt', 'r')
 
 y = file.readlines()
@@ -26,3 +26,6 @@ if(status == 'ada') :
 
 else :
     print('Data mahasiswa tidak ditemukan')
+    
+#menutup file
+file.close()
